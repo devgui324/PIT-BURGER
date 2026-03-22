@@ -1,0 +1,111 @@
+        :root {
+            --bg-color: #0a0a0a;
+            --card-color: #161616;
+            --gold: #ffca28;
+            --green: #25d366;
+            --red: #ff4444;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --radius-card: 16px;
+            --radius-sheet: 24px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--bg-color); color: var(--text-main); padding-bottom: 100px; }
+
+        /* --- HEADER PROFISSIONAL --- */
+        .main-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #000;
+            font-size: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 15px rgba(255, 202, 40, 0.4);
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .brand-name span { color: var(--gold); }
+
+        .brand-info {
+            font-size: 13px;
+            color: #bbb;
+            margin-top: 5px;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Navegação */
+        nav { position: sticky; top: 0; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); padding: 15px; display: flex; gap: 12px; overflow-x: auto; z-index: 10; border-bottom: 1px solid #222; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-btn { background: var(--card-color); color: var(--text-main); text-decoration: none; padding: 8px 16px; border-radius: 20px; white-space: nowrap; font-size: 13px; font-weight: 600; border: 1px solid #333; }
+
+        /* Grid de Produtos com Imagem */
+        main { padding: 15px; }
+        section { margin-top: 25px; scroll-margin-top: 80px; }
+        h2 { font-size: 18px; margin-bottom: 15px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        
+        .card { background: var(--card-color); border-radius: var(--radius-card); padding: 15px; border: 1px solid #222; cursor: pointer; }
+        .card-content { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+        .card-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .card-title { font-weight: 700; font-size: 16px; }
+        .card-price { color: var(--gold); font-weight: 800; }
+        .card-desc { color: var(--text-muted); font-size: 13px; line-height: 1.4; }
+        
+        /* Estilo da Imagem do Produto */
+        .card-img { width: 85px; height: 85px; border-radius: 12px; object-fit: cover; background: #222; flex-shrink: 0; border: 1px solid #333; }
+
+        /* Modais / Bottom Sheet */
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 20; opacity: 0; pointer-events: none; transition: 0.3s; }
+        .overlay.active { opacity: 1; pointer-events: auto; }
+        .bottom-sheet { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--card-color); border-radius: var(--radius-sheet) var(--radius-sheet) 0 0; padding: 25px 20px; z-index: 21; transform: translateY(100%); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1); max-height: 85vh; overflow-y: auto; }
+        .bottom-sheet.active { transform: translateY(0); }
+        
+        /* Itens do Carrinho no Checkout */
+        .cart-item-row { background: #222; padding: 12px; border-radius: 10px; margin-bottom: 10px; position: relative; border: 1px solid #333; }
+        .remove-btn { color: var(--red); font-size: 11px; font-weight: bold; background: none; border: 1px solid var(--red); padding: 5px 10px; border-radius: 6px; cursor: pointer; margin-top: 10px; text-transform: uppercase; }
+
+        /* Formulários */
+        select, input, textarea { width: 100%; background: #2a2a2a; border: 1px solid #333; color: #fff; padding: 14px; border-radius: 10px; margin-top: 10px; font-size: 15px; }
+        label { display: block; margin-top: 15px; font-size: 14px; color: var(--gold); font-weight: bold; }
+
+        /* Botões */
+        .btn-action { width: 100%; padding: 16px; border: none; border-radius: 12px; font-weight: 800; font-size: 16px; margin-top: 20px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-green { background: var(--green); color: #fff; }
+
+        /* Carrinho Flutuante */
+        .floating-cart { position: fixed; bottom: 20px; left: 5%; width: 90%; background: var(--green); padding: 16px 24px; border-radius: 50px; display: flex; justify-content: space-between; align-items: center; z-index: 15; transform: translateY(150%); transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.5); font-weight: 800; }
+        .floating-cart.active { transform: translateY(0); }
+
+        .addon-line { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #2a2a2a; font-size: 14px; }
+        .addon-line input { width: 20px; height: 20px; margin: 0; }
