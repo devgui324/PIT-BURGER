@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pit Burguer – Cardápio Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap" id="logoWrap">
+    <!-- ✏️ LOGO: cole a URL da sua logo abaixo. Deixe vazio ('') para usar o emoji padrão -->
+    <div id="logoContainer"></div>
+    <div class="logo-name">Pit Burguer</div>
+    <div class="logo-sub">Artesanal • Pgm</div>
+  </div>
+  <div class="header-info">
+    <a href="https://wa.me/5591982386167" target="_blank">
+      <svg class="si si-wa" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#25D366"/>
+        <path d="M23.5 8.5A10.46 10.46 0 0 0 16 5.5C10.201 5.5 5.5 10.201 5.5 16a10.45 10.45 0 0 0 1.404 5.26L5.5 26.5l5.394-1.415A10.46 10.46 0 0 0 16 26.5c5.799 0 10.5-4.701 10.5-10.5 0-2.806-1.093-5.443-3-7.5z" fill="#25D366"/>
+        <path d="M23.472 20.222c-.294-.147-1.74-.858-2.01-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.171.196-.343.22-.637.073-.294-.147-1.24-.457-2.363-1.457-.873-.778-1.463-1.74-1.634-2.034-.171-.294-.018-.453.129-.6.132-.13.294-.34.44-.51.148-.171.197-.294.295-.49.098-.196.05-.368-.024-.515-.074-.147-.663-1.6-.908-2.19-.239-.575-.482-.497-.663-.506l-.564-.01c-.196 0-.515.073-.785.368s-1.03 1.006-1.03 2.453c0 1.447 1.054 2.845 1.201 3.041.147.196 2.075 3.17 5.028 4.444.703.303 1.25.484 1.678.62.705.224 1.347.192 1.855.116.566-.084 1.74-.711 1.986-1.398.245-.686.245-1.274.171-1.397-.073-.122-.27-.196-.564-.343z" fill="white"/>
+      </svg>
+      (91) 98238-6167
+    </a>
+    <a href="https://instagram.com/pitburguer_pgm" target="_blank">
+      <svg class="si si-ig" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="ig-grad" cx="30%" cy="107%" r="130%">
+            <stop offset="0%" stop-color="#fdf497"/>
+            <stop offset="5%" stop-color="#fdf497"/>
+            <stop offset="45%" stop-color="#fd5949"/>
+            <stop offset="60%" stop-color="#d6249f"/>
+            <stop offset="90%" stop-color="#285AEB"/>
+          </radialGradient>
+        </defs>
+        <rect width="32" height="32" rx="8" fill="url(#ig-grad)"/>
+        <rect x="9" y="9" width="14" height="14" rx="4" stroke="white" stroke-width="1.8" fill="none"/>
+        <circle cx="16" cy="16" r="3.5" stroke="white" stroke-width="1.8" fill="none"/>
+        <circle cx="21" cy="11" r="1" fill="white"/>
+      </svg>
+      @pitburguer_pgm
+    </a>
+  </div>
+  <div class="badge-note">🥔 Todos os acompanhamentos vão dentro do lanche</div>
+</header>
+
+<div class="cat-nav-wrap">
+  <div class="cat-nav" id="catNav">
+    <button class="cat-btn active" data-target="sec-lanches">🍔 Lanches</button>
+    <button class="cat-btn" data-target="sec-combos">🍟 Combos</button>
+    <button class="cat-btn" data-target="sec-caldos">🍲 Caldos</button>
+    <button class="cat-btn" data-target="sec-porcoes">🍟 Porções</button>
+    <button class="cat-btn" data-target="sec-bebidas">🥤 Bebidas</button>
+  </div>
+</div>
+
+<div id="menuRoot"></div>
+
+<div class="cart-bar" id="cartBar">
+  <div class="cart-inner">
+    <div class="cart-summary">
+      <div class="cart-count" id="cartCount">0 itens</div>
+      <div class="cart-total" id="cartTotal">R$ 0,00</div>
+    </div>
+    <button class="cart-view-btn" onclick="openCartModal()">Ver pedido</button>
+    <button class="checkout-btn" onclick="openCheckoutModal()">Finalizar ✅</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="overlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-handle"></div>
+    <button class="close-modal" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
